@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B22872219CDD449001D806E /* IncentiViral.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B22872119CDD449001D806E /* IncentiViral.h */; };
+		7B22872419CDD449001D806E /* IncentiViral.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B22872319CDD449001D806E /* IncentiViral.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7B22871C19CDD449001D806E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7B22872219CDD449001D806E /* IncentiViral.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7B22871E19CDD449001D806E /* libIncentiViral.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIncentiViral.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B22872119CDD449001D806E /* IncentiViral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncentiViral.h; sourceTree = "<group>"; };
+		7B22872319CDD449001D806E /* IncentiViral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncentiViral.m; sourceTree = "<group>"; };
+		7B22872919CDD449001D806E /* IncentiViralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IncentiViralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B22872C19CDD449001D806E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B22871B19CDD449001D806E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B22872619CDD449001D806E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B22871519CDD449001D806E = {
+			isa = PBXGroup;
+			children = (
+				7B22872019CDD449001D806E /* IncentiViral */,
+				7B22872A19CDD449001D806E /* IncentiViralTests */,
+				7B22871F19CDD449001D806E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B22871F19CDD449001D806E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B22871E19CDD449001D806E /* libIncentiViral.a */,
+				7B22872919CDD449001D806E /* IncentiViralTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B22872019CDD449001D806E /* IncentiViral */ = {
+			isa = PBXGroup;
+			children = (
+				7B22872119CDD449001D806E /* IncentiViral.h */,
+				7B22872319CDD449001D806E /* IncentiViral.m */,
+			);
+			path = IncentiViral;
+			sourceTree = "<group>";
+		};
+		7B22872A19CDD449001D806E /* IncentiViralTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B22872B19CDD449001D806E /* Supporting Files */,
+			);
+			path = IncentiViralTests;
+			sourceTree = "<group>";
+		};
+		7B22872B19CDD449001D806E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B22872C19CDD449001D806E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B22871D19CDD449001D806E /* IncentiViral */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B22872F19CDD449001D806E /* Build configuration list for PBXNativeTarget "IncentiViral" */;
+			buildPhases = (
+				7B22871A19CDD449001D806E /* Sources */,
+				7B22871B19CDD449001D806E /* Frameworks */,
+				7B22871C19CDD449001D806E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IncentiViral;
+			productName = IncentiViral;
+			productReference = 7B22871E19CDD449001D806E /* libIncentiViral.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7B22872819CDD449001D806E /* IncentiViralTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B22873219CDD449001D806E /* Build configuration list for PBXNativeTarget "IncentiViralTests" */;
+			buildPhases = (
+				7B22872519CDD449001D806E /* Sources */,
+				7B22872619CDD449001D806E /* Frameworks */,
+				7B22872719CDD449001D806E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IncentiViralTests;
+			productName = IncentiViralTests;
+			productReference = 7B22872919CDD449001D806E /* IncentiViralTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B22871619CDD449001D806E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = hacko;
+				TargetAttributes = {
+					7B22871D19CDD449001D806E = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					7B22872819CDD449001D806E = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = 7B22871919CDD449001D806E /* Build configuration list for PBXProject "IncentiViral" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7B22871519CDD449001D806E;
+			productRefGroup = 7B22871F19CDD449001D806E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B22871D19CDD449001D806E /* IncentiViral */,
+				7B22872819CDD449001D806E /* IncentiViralTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B22872719CDD449001D806E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B22871A19CDD449001D806E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B22872419CDD449001D806E /* IncentiViral.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B22872519CDD449001D806E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7B22872D19CDD449001D806E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7B22872E19CDD449001D806E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B22873019CDD449001D806E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7B22873119CDD449001D806E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7B22873319CDD449001D806E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IncentiViralTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7B22873419CDD449001D806E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IncentiViralTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B22871919CDD449001D806E /* Build configuration list for PBXProject "IncentiViral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B22872D19CDD449001D806E /* Debug */,
+				7B22872E19CDD449001D806E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B22872F19CDD449001D806E /* Build configuration list for PBXNativeTarget "IncentiViral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B22873019CDD449001D806E /* Debug */,
+				7B22873119CDD449001D806E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7B22873219CDD449001D806E /* Build configuration list for PBXNativeTarget "IncentiViralTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B22873319CDD449001D806E /* Debug */,
+				7B22873419CDD449001D806E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B22871619CDD449001D806E /* Project object */;
+}
