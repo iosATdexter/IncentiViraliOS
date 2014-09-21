@@ -25,7 +25,7 @@ The sample app "app" included in the repo demonstrates the following features
 ##Setup Incentiviral for your user
 
 To receive async callbacks of the logging and upcoming APIs, user must conform to following protocol
-```
+```objc
 @protocol viralDelegate <NSObject>
 
 @required
@@ -36,7 +36,7 @@ To receive async callbacks of the logging and upcoming APIs, user must conform t
 ```
 
 To initialise Incentiviral call ```initWithAppIdentifier:withUserIdentifier``` which returns an Incentiviral object.
-```ios
+```objc
 [[IncentiViral alloc] initWithAppIdentifier:@“xyz” withUserIdentifier:@“xyz”];
 ```
 Here
@@ -45,27 +45,27 @@ Here
 
 ##Logging events
 To log an event, call the ```logEventWithEventName:withCount:withDelegate``` method
-```ios
+```objc
 [incentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
 ```
 and implement appropriate protocol method to receive success/failure callback.
 
 ##Checking for Rewards
 To check for rewards, call the ```checkCurrentRewardsWithDelegate```
-```ios
+```objc
 [incentiviralObject checkCurrentRewardsWithDelegate:self];
 ```
 and handle the appropriate protocol method for getting success/failure callback.
 
 ##Show all rewards
 To fetch a list of all possible rewards, call the ```checkStaticRewardListWithDelegate:``` method
-```ios
+```objc
 [incentiviralObject checkStaticRewardListWithDelegate:self];
 ```
 and handle the appropriate protocol method for getting success/failure callback.
 
 For example, if you'd like to log an event that the user visited some screen in your app 10 times, you can
-```ios
+```objc
 [incentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
 
 - (void) didEventLogWithError:(NSError *)error
