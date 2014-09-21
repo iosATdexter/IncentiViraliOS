@@ -12,8 +12,10 @@
     
     NSURLConnection *myConn_LogEvent;
     NSURLConnection *myConn_checkRewards;
+    NSURLConnection *myConn_getRewardList;
     
     NSDictionary *rewardsDictionary;
+    NSArray *rewardsListArray;
     id userDelegate;
 }
 @end
@@ -97,6 +99,28 @@
     [myConn_checkRewards start];
 }
 
+- (void) checkStaticRewardListWithDelegate:(id)delegate
+{
+    userDelegate = delegate;
+    
+    NSString *getURLRequest = [NSString stringWithFormat:@"http://incentiviral.herokuapp.com/api/rewards?appId=%@",self.appID];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getURLRequest]];
+    
+    // Specify that it will be a POST request
+    request.HTTPMethod = @"GET";
+    
+    // This is how we set header fields
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    // Create url connection and fire request
+    myConn_getRewardList = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
+    
+    [myConn_getRewardList scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                                   forMode:NSDefaultRunLoopMode];
+    [myConn_getRewardList start];
+}
+
 # pragma mark NSURLConnectionDelegate methods implementation
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -131,10 +155,16 @@
     }
     else if (connection == myConn_checkRewards) {
         rewardsDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-        //NSLog(@"Response - %@", rewardsDictionary);
         
         if ([userDelegate respondsToSelector:@selector(didReceiveRewards:withError:)]) {
             [userDelegate didReceiveRewards:rewardsDictionary withError:nil];
+        }
+    }
+    else if (connection == myConn_getRewardList) {
+        rewardsListArray = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+        
+        if ([userDelegate respondsToSelector:@selector(didReceiveRewardsList:withError:)]) {
+            [userDelegate didReceiveRewardsList:rewardsListArray withError:nil];
         }
     }
 }
@@ -159,6 +189,13 @@
         
         if ([userDelegate respondsToSelector:@selector(didReceiveRewards:withError:)]) {
             [userDelegate didReceiveRewards:nil withError:err];
+        }
+    }
+    else if (connection == myConn_getRewardList) {
+        NSError *err = [NSError errorWithDomain:@"viralDomain" code:102 userInfo:nil];
+        
+        if ([userDelegate respondsToSelector:@selector(didReceiveRewardsList:withError:)]) {
+            [userDelegate didReceiveRewardsList:nil withError:err];
         }
     }
 }

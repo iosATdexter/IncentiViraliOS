@@ -13,6 +13,7 @@
 @required
 - (void) didReceiveRewards:(NSDictionary *) rewardsDictionary withError:(NSError *) error;
 - (void) didEventLogWithError:(NSError *) error;
+- (void) didReceiveRewardsList:(NSArray *) rewardsList withError:(NSError *) error;
 @end
 
 @interface IncentiViral : NSObject <NSURLConnectionDelegate> {
@@ -43,5 +44,7 @@
 - (void) logEventWithEventName:(NSString *)eventName withCount:(NSInteger) count withDelegate:(id) delegate;
 
 - (void) checkCurrentRewardsWithDelegate:(id) delegate;
+
+- (void) checkStaticRewardListWithDelegate: (id) delegate;
 
 @end
