@@ -24,6 +24,16 @@ The sample app "app" included in the repo demonstrates the following features
 
 ##Setup Incentiviral for your user
 
+To receive async callbacks of the logging and upcoming APIs, user must conform to following protocol
+```
+@protocol viralDelegate <NSObject>
+
+@required
+- (void) didReceiveRewards:(NSDictionary *) rewardsDictionary withError:(NSError *) error;
+- (void) didEventLogWithError:(NSError *) error;
+@end
+```
+
 To initialise Incentiviral call ```initWithAppIdentifier:withUserIdentifier``` which returns an Incentiviral object.
 ```ios
 [[IncentiViral alloc] initWithAppIdentifier:@“xyz” withUserIdentifier:@“xyz”];
@@ -33,59 +43,44 @@ Here
 - **UserIdentifier** is the unique id of the user of the app, incentives will be tracked based on this user id for your application
 
 ##Logging events
-To log an event, call the logEventWithEventName:withCount:withDelegate method
+To log an event, call the ```logEventWithEventName:withCount:withDelegate``` method
 ```ios
 [IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
 ```
-
-For example, if you'd like to log an event that the user has successfully shared the relevant message on facebook, you can
-```java
-Incentiviral.logEvent("facebookShare", 1, new LogEventListener() {
-  @Override
-  public void onLogEventSuccess() {
-    Toast.makeText(SampleActivity.this, "Event logged successfully", Toast.LENGTH_SHORT).show();
-  }
-
-  @Override
-  public void onLogEventFailure(String error) {
-    Toast.makeText(SampleActivity.this, "Error in event logging: " + error, Toast.LENGTH_SHORT).show();
-  }
-});
-```
-**Note**
-- There are some callbacks, mainly onLogEventSuccess and onLogEventFailure that let us know the status of the event logging
+and implement appropriate protocol method to receive success/failure callback.
 
 ##Checking for Rewards
-To check for rewards, please call the checkCurrentRewards method which is handled **asynchronously**
-```java
-Incentiviral.checkCurrentRewards(new RewardsListener() {
-  @Override
-  public void onRewardsReceived(List<Reward> rewards) {
-    if(rewards!=null) {
-      Toast.makeText(SampleActivity.this, rewards.get(0).getDesc(), Toast.LENGTH_SHORT).show();
+To check for rewards, call the ```checkCurrentRewardsWithDelegate```
+```ios
+[IncentiviralObject checkCurrentRewardsWithDelegate:self];
+```
+and handle the appropriate protocol method for getting success/failure callback.
+
+For example, if you'd like to log an event that the user visited some screen in your app 10 times, you can
+```ios
+[IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
+
+- (void) didEventLogWithError:(NSError *)error
+{
+    if (error) {
+        // Handle error object
     }
-  }
+    else {
+	// Calling checkCurrentRewardsWithDelegate: method only if the Event Logging call succeeds
+        [appDelegate.viralObject checkCurrentRewardsWithDelegate:self];
+    }
+}
 
-  @Override
-  public void onRewardsFailed(String error) {
-    Toast.makeText(SampleActivity.this, "Error: " + error, Toast.LENGTH_SHORT).show();
-  }
-});
+- (void) didReceiveRewards:(NSDictionary *)rewardsDictionary withError:(NSError *)error
+{
+    // Handle NSDictionary data according to use case. In this dictionary user will be getting details about the reward sent from server.
+}
 ```
+
 **Note**
-- This call is completely asynchronous in nature, there is no need to add support for threading
-- A callback to onRewardsReceived is received when information about the deals is received
+- These call is completely asynchronous in nature, there is no need to add support for threading
 - In case there are no active deals, this list will be blank
-- In case there is an error while retrieving deals, a callback to onRewardsFailed is received
 
-Also available, a **synchronous** call to check rewards, useful when one wants to explicitly wait for the rewards, example:
-
-```java
-List<Reward> rewards = Incentiviral.checkCurrentRewardsSync();
-```
-**Note**
-- this should not be called from the UI thread as in might block UI processing
-- can be called from an AsyncTask or any non-UI thread
 
 ##The Reward object
 Once you have a list of rewards that is accessible to the user, you can use the following methods to find details of the reward itself
