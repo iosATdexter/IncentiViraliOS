@@ -24,7 +24,7 @@ The sample app "app" included in the repo demonstrates the following features
 
 ##Setup Incentiviral for your user
 
-To initialise Incentiviral call initWithAppIdentifier:withUserIdentifier which returns an Incentiviral object.
+To initialise Incentiviral call ```initWithAppIdentifier:withUserIdentifier``` which returns an Incentiviral object.
 ```ios
 [[IncentiViral alloc] initWithAppIdentifier:@“xyz” withUserIdentifier:@“xyz”];
 ```
