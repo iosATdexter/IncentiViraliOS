@@ -80,13 +80,3 @@ For example, if you'd like to log an event that the user visited some screen in 
 **Note**
 - These call is completely asynchronous in nature, there is no need to add support for threading
 - In case there are no active deals, this list will be blank
-
-
-##The Reward object
-Once you have a list of rewards that is accessible to the user, you can use the following methods to find details of the reward itself
-```java
-String title = reward.getTitle();
-String description = reward.getDesc();
-String code = reward.getCode();
-```
-With the above information, you can show the incentive to the end user
