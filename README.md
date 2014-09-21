@@ -31,6 +31,7 @@ To receive async callbacks of the logging and upcoming APIs, user must conform t
 @required
 - (void) didReceiveRewards:(NSDictionary *) rewardsDictionary withError:(NSError *) error;
 - (void) didEventLogWithError:(NSError *) error;
+- (void) didReceiveRewardsList:(NSArray *) rewardsList withError:(NSError *) error;
 @end
 ```
 
@@ -45,20 +46,27 @@ Here
 ##Logging events
 To log an event, call the ```logEventWithEventName:withCount:withDelegate``` method
 ```ios
-[IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
+[incentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
 ```
 and implement appropriate protocol method to receive success/failure callback.
 
 ##Checking for Rewards
 To check for rewards, call the ```checkCurrentRewardsWithDelegate```
 ```ios
-[IncentiviralObject checkCurrentRewardsWithDelegate:self];
+[incentiviralObject checkCurrentRewardsWithDelegate:self];
+```
+and handle the appropriate protocol method for getting success/failure callback.
+
+##Show all rewards
+To fetch a list of all possible rewards, call the ```checkStaticRewardListWithDelegate:``` method
+```ios
+[incentiviralObject checkStaticRewardListWithDelegate:self];
 ```
 and handle the appropriate protocol method for getting success/failure callback.
 
 For example, if you'd like to log an event that the user visited some screen in your app 10 times, you can
 ```ios
-[IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
+[incentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
 
 - (void) didEventLogWithError:(NSError *)error
 {
