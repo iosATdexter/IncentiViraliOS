@@ -24,28 +24,18 @@ The sample app "app" included in the repo demonstrates the following features
 
 ##Setup Incentiviral for your user
 
-To initialise Incentiviral call following designated initialiser
+To initialise Incentiviral call initWithAppIdentifier:withUserIdentifier which returns an Incentiviral object.
 ```ios
 [[IncentiViral alloc] initWithAppIdentifier:@“xyz” withUserIdentifier:@“xyz”];
 ```
 Here
-- **appId** is your application id available at the Incentiviral dashboard, this is unique to your application
-- **userId** is the unique id of the user of the app, incentives will be tracked based on this user id for your application
+- **AppIdentifier** is your application id available at the Incentiviral dashboard, this is unique to your application
+- **UserIdentifier** is the unique id of the user of the app, incentives will be tracked based on this user id for your application
 
 ##Logging events
-To log an event, please call the logEvent method
-```java
-Incentiviral.logEvent("eventType", count, new LogEventListener() {
-  @Override
-  public void onLogEventSuccess() {
-    Toast.makeText(SampleActivity.this, "Event logged successfully", Toast.LENGTH_SHORT).show();
-  }
-
-  @Override
-  public void onLogEventFailure(String error) {
-    Toast.makeText(SampleActivity.this, "Error in event logging: " + error, Toast.LENGTH_SHORT).show();
-  }
-});
+To log an event, call the logEventWithEventName:withCount:withDelegate method
+```ios
+[IncentiviralObject logEventWithEventName:@“eventName” withCount:1 withDelegate:self];
 ```
 
 For example, if you'd like to log an event that the user has successfully shared the relevant message on facebook, you can
